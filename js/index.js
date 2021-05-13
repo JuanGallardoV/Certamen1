@@ -20,16 +20,16 @@ tinymce.init({
 */
 let horarioSelect = document.querySelector("#horario");
 let desayuno = document.createElement("option");
-desayuno.value = "desayuno";
+desayuno.value = "Desayuno";
 desayuno.text = "Desayuno";
 let almuerzo = document.createElement("option");
-almuerzo.value = "almuerzo";
+almuerzo.value = "Almuerzo";
 almuerzo.text = "Almuerzo";
 let once = document.createElement("option");
-once.value = "once";
+once.value = "Once";
 once.text = "Once";
 let cena = document.createElement("option");
-cena.value = "cena";
+cena.value = "Cena";
 cena.text = "Cena";
 horarioSelect.appendChild(desayuno);
 horarioSelect.appendChild(almuerzo);
@@ -61,16 +61,16 @@ for(let i=0;i<menus.length;++i){
     //  Menor que 20000     Cena          Si
     //Precio total:     <i class="fas fa-dollar-sign"></i>
     //Oferta:           <i class="fas fa-percent"></i>
-    if(m.horario =="desayuno" && m.valor<5000){
-        icono.classList.add("fas","fa-percent","fa-3x","text-danger")
-    }else if(m.horario =="almuerzo" && m.valor<15000){
-        icono.classList.add("fas","fa-percent","fa-3x","text-danger")
-    }else if(m.horario=="once" && m.valor<10000){
-        icono.classList.add("fas","fa-percent","fa-3x","text-danger")
-    }else if(m.horario=="cena" && m.valor<20000){
-        icono.classList.add("fas","fa-percent","fa-3x","text-danger")
+    if(m.horario =="Desayuno" && m.valor<5000){
+        icono.classList.add("fas","fa-percent","fa-2x","text-danger")
+    }else if(m.horario =="Almuerzo" && m.valor<15000){
+        icono.classList.add("fas","fa-percent","fa-2x","text-danger")
+    }else if(m.horario=="Once" && m.valor<10000){
+        icono.classList.add("fas","fa-percent","fa-2x","text-danger")
+    }else if(m.horario=="Cena" && m.valor<20000){
+        icono.classList.add("fas","fa-percent","fa-2x","text-danger")
     }else{
-        icono.classList.add("fas","fa-dollar-sign","fa-3x","text-warning")
+        icono.classList.add("fas","fa-dollar-sign","fa-2x","text-warning")
     }
     tdOferta.classList.add("text-center")
     tdOferta.appendChild(icono);
@@ -92,7 +92,7 @@ document.querySelector("#guardar").addEventListener('click',()=>{
     let horario = document.querySelector("#horario").value;
     let valor = document.querySelector("#valor").value;
     let descripcion = tinymce.get("descripcion").getContent();
-    if(horario =="desayuno"){
+    if(horario =="Desayuno"){
         if(valor<1000 || valor>10000){
             Swal.fire({
                 icon: 'error',
@@ -109,7 +109,7 @@ document.querySelector("#guardar").addEventListener('click',()=>{
             cargartabla();
             Swal.fire("Exito!","Registro de Menu realizado","success")
         }
-    }else if(horario=="almuerzo"){
+    }else if(horario=="Almuerzo"){
         if(valor<10000 || valor>20000){
             Swal.fire({
                 icon: 'error',
@@ -126,7 +126,7 @@ document.querySelector("#guardar").addEventListener('click',()=>{
             cargartabla();
             Swal.fire("Exito!","Registro de Menu realizado","success")
         }
-    }else if(horario=="once"){
+    }else if(horario=="Once"){
         if(valor<5000 || valor>15000){
             Swal.fire({
                 icon: 'error',
